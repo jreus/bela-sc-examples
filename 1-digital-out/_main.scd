@@ -18,7 +18,7 @@ s = Server.default;
 
 s.options.numAnalogInChannels = 2;
 s.options.numAnalogOutChannels = 2;
-s.options.numDigitalChannels = 1;
+s.options.numDigitalChannels = 16;
 s.options.maxLogins = 16;  	   // set max number of clients
 
 s.options.speakerMuted = 1;    // the speakers are not muted (so active)
@@ -33,7 +33,9 @@ s.waitForBoot{
 		DigitalOut.ar(outPin, LFPulse.ar(rate))
 	}).add;
 	
-	a = Synth('blinker', ['outPin', 0, 'rate', 1]);
+	s.sync;
+	
+	a = Synth('blinker', ['outPin', 6, 'rate', 1]);
 };
 
 

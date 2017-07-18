@@ -24,7 +24,7 @@ s = Server.default;
 
 s.options.numAnalogInChannels = 2;
 s.options.numAnalogOutChannels = 2;
-s.options.numDigitalChannels = 2;
+s.options.numDigitalChannels = 16;
 s.options.maxLogins = 16;  	   // set max number of clients
 
 s.options.speakerMuted = 1;    // the speakers are not muted (so active)
@@ -35,11 +35,14 @@ s.options.numInputBusChannels = 2;
 s.options.numOutputBusChannels = 2;
 
 s.waitForBoot{
-	"Server Booted".postln;
-	{
-		var button = DigitalIn.ar(1);
-		DigitalOut.ar(0, button.poll(0.5), 0);
-	}.play;
+	SynthDef('buttonControl', {arg inPin, outPin;
+		var button = DigitalIn.ar(inPin);
+		DigitalOut.ar(outPin, button);
+	}).add;	
+	
+	s.sync;
+	
+	a = Synth('buttonControl', ['inPin', 7, 'outPin', 6]);
 };
 
 
