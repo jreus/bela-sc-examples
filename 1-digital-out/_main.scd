@@ -29,10 +29,11 @@ s.options.numInputBusChannels = 2;
 s.options.numOutputBusChannels = 2;
 
 s.waitForBoot{
-	"Server Booted".postln;
-	{
-		DigitalOut.ar(0, LFPulse.ar(0.5).poll(1), 0);
-	}.play;
+	SynthDef('blinker', {arg outPin, rate=1;
+		DigitalOut.ar(outPin, LFPulse.ar(rate))
+	}).add;
+	
+	a = Synth('blinker', ['outPin', 0, 'rate', 1]);
 };
 
 
