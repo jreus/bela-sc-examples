@@ -47,5 +47,3 @@ DigitalIO is writing data every frame and checking the pin IO status
 */
 
 
-
-
