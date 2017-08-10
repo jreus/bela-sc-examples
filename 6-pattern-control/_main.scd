@@ -31,9 +31,9 @@ s.options.maxLogins = 8;  	   // set max number of clients
 
 s.options.speakerMuted = 1;    // the speakers are not muted (so active)
 s.options.numMultiplexChannels = 0; // do not enable multiplexer channels
-s.options.headphoneLevel = 0; // sets the headphone level to 0 dB
+s.options.headphoneLevel = -14; // sets the headphone level to 0 dB
 
-s.options.blockSize = 16;
+s.options.blockSize = 128;
 s.options.numInputBusChannels = 2;
 s.options.numOutputBusChannels = 2;
 
@@ -49,8 +49,8 @@ s.waitForBoot{
 
 
 	~ctrl = {
-		var a0 = AnalogIn.ar(0);
-		var a1 = AnalogIn.ar(1);
+		var a0 = AnalogIn.ar(0) * 0.5;
+		var a1 = AnalogIn.ar(1) * 0.5;
 		SendReply.kr(Impulse.kr(10), '/ctrl', [a0, a1]);
 	}.play;
 
