@@ -9,7 +9,6 @@ AnalogIn returns a value from 0-1
 
 analogPin:  Analog pin number to read. Pin numbers begin at 0. This value can be modulated at audiorate.
 
-
 */
 
 s = Server.default;
@@ -34,9 +33,4 @@ s.waitForBoot{
 		Out.ar(0, SinOsc.ar(pitch).dup * gain);
 	}.play;
 };
-
-
-
-
-
 

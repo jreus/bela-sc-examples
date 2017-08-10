@@ -38,8 +38,3 @@ s.waitForBoot{
 	a = Synth('blinker', ['outPin', 6, 'rate', 1]);
 };
 
-
-
-
-
-

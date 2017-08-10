@@ -45,8 +45,3 @@ s.waitForBoot{
 	a = Synth('buttonControl', ['inPin', 7, 'outPin', 6]);
 };
 
-
-
-
-
-
