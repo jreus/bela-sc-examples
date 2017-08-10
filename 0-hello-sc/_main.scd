@@ -11,7 +11,7 @@ s.options.numAnalogInChannels = 2;
 s.options.numAnalogOutChannels = 2;
 s.options.numDigitalChannels = 0;
 s.options.maxLogins = 4;
-s.options.speakerMuted = 1;    // mute the onboard audio amps
+s.options.speakerMuted = 0;    // mute the onboard audio amps
 s.options.numMultiplexChannels = 0; // do not enable multiplexer channels
 
 s.options.blockSize = 16;

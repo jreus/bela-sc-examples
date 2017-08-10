@@ -27,7 +27,7 @@ s.options.numAnalogOutChannels = 2;
 s.options.numDigitalChannels = 0;
 s.options.maxLogins = 16;  	   // set max number of clients
 
-s.options.speakerMuted = 1;    // the speakers are not muted (so active)
+s.options.speakerMuted = 0;    // the speakers are not muted (so active)
 s.options.numMultiplexChannels = 0; // do not enable multiplexer channels
 
 s.options.blockSize = 16;
@@ -36,16 +36,15 @@ s.options.numOutputBusChannels = 2;
 
 s.waitForBoot{
 	"Server Booted".postln;
-	{
+	SynthDef('ledFade', {
 		var rate = AnalogIn.ar(0).exprange(0.3, 20);
 		var amp = AnalogIn.ar(1); // returns a value from 0-1
 		rate.poll(1); amp.poll(1);
 		AnalogOut.ar(0, SinOsc.ar(rate).range(0.0, amp)); // send to Analog Output 0
-	}.play;
+	}).add;
+
+	s.sync;
+
+	a = Synth('ledFade');
 };
-
-
-
-
-
 

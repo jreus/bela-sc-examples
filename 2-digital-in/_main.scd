@@ -27,7 +27,7 @@ s.options.numAnalogOutChannels = 2;
 s.options.numDigitalChannels = 16;
 s.options.maxLogins = 16;  	   // set max number of clients
 
-s.options.speakerMuted = 1;    // the speakers are not muted (so active)
+s.options.speakerMuted = 0;    // the speakers are not muted (so active)
 s.options.numMultiplexChannels = 0; // do not enable multiplexer channels
 
 s.options.blockSize = 16;
@@ -44,9 +44,4 @@ s.waitForBoot{
 	
 	a = Synth('buttonControl', ['inPin', 7, 'outPin', 6]);
 };
-
-
-
-
-
 

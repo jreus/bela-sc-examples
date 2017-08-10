@@ -22,7 +22,7 @@ s.options.numDigitalChannels = 16;
 s.options.maxLogins = 4;
 
 s.options.headphoneLevel = 0; // sets the headphone level to 0 dB
-s.options.speakerMuted = 1;    // the speaker amps are muted to save power
+s.options.speakerMuted = 0;    // the speaker amps are muted to save power
 s.options.dacLevel = 0;       // sets the gain of the dac to 0 dB
 s.options.adcLevel = 0;       // sets the gain of the adc to 0 dB
 s.options.numMultiplexChannels = 0; // do not enable multiplexer channels

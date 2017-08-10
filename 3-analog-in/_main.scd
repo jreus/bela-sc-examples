@@ -9,7 +9,6 @@ AnalogIn returns a value from 0-1
 
 analogPin:  Analog pin number to read. Pin numbers begin at 0. This value can be modulated at audiorate.
 
-
 */
 
 s = Server.default;
@@ -19,7 +18,7 @@ s.options.numAnalogOutChannels = 2;
 s.options.numDigitalChannels = 0;
 s.options.maxLogins = 16;  	   // set max number of clients
 
-s.options.speakerMuted = 1;    // the speakers are not muted (so active)
+s.options.speakerMuted = 0;    // the speakers are not muted (so active)
 s.options.numMultiplexChannels = 0; // do not enable multiplexer channels
 
 s.options.blockSize = 16;
@@ -34,9 +33,4 @@ s.waitForBoot{
 		Out.ar(0, SinOsc.ar(pitch).dup * gain);
 	}.play;
 };
-
-
-
-
-
 
