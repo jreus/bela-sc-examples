@@ -29,7 +29,7 @@ s.options.numAnalogOutChannels = 2;
 s.options.numDigitalChannels = 0;
 s.options.maxLogins = 8;  	   // set max number of clients
 
-s.options.speakerMuted = 1;    // the speakers are not muted (so active)
+s.options.speakerMuted = 0;    // the speakers are not muted (so active)
 s.options.numMultiplexChannels = 0; // do not enable multiplexer channels
 s.options.headphoneLevel = -14; // sets the headphone level to 0 dB
 
